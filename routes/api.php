@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopicsController;
+use App\Http\Controllers\SubscriptionsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +21,6 @@ Route::get('/topics', [TopicsController::class , 'retrieveTopics'])->name("retri
 
 // Create New Topic
 Route::post('/topics', [TopicsController::class , 'createTopic'])->name("createTopic");
+
+//Create a subscription POST /subscribe/{topic}
+Route::post('/subscribe/{topic}', [SubscriptionsController::class , 'subscribe'])->name("subscribe");

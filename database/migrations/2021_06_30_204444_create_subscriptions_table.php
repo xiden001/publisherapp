@@ -15,8 +15,8 @@ class CreateSubscriptionsTable extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('topic_id')->nullable();
-
+            $table->unsignedInteger('topic_id');
+            $table->string('url');
             $table->foreign('topic_id')
                 ->references('id')
                 ->on('topics')
