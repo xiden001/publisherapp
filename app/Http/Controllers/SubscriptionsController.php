@@ -65,15 +65,22 @@ class SubscriptionsController extends Controller
 
         //get subscribers
         $subscribers = Subscription::where("topic_id", $topic->id)->get();
-
+        $counter = 0;
         //loop through subscribers and fire notification job
         foreach($subscribers as $subscriber){
-           PublishTopic::dispatchSync($subscriber->url,$topic->name, $request->getContent());
+            try{
+
+            PublishTopic::dispatchSync($subscriber->url,$topic->name, $request->getContent());
+            $counter++;
+
+            }catch(Exception $e){
+              
+            }
         }
         
         return response()->json([
             "status" => "success",
-            "message" => "Topic published to subscribers!"
+            "message" => "Topic published to ".$counter." subscribers!"
         ],200);
 
         }
