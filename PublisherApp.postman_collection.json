@@ -1,0 +1,102 @@
+{
+	"variables": [],
+	"info": {
+		"name": "PublisherApp",
+		"_postman_id": "3bf77d3a-0b8e-e16e-d0bb-4ba5952c0a63",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Topics",
+			"request": {
+				"url": "http://localhost:8000/topics",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Topic",
+			"request": {
+				"url": "http://localhost:8000/topics",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"topic4\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Subscription",
+			"request": {
+				"url": "http://localhost:8000/subscribe/topic4",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"url\" : \"http://mysubscriber.test\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Topic",
+			"request": {
+				"url": "http://localhost:8000/publish/topic1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"message\" : \"Hello World\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Subscriber Server",
+			"request": {
+				"url": "http://localhost:9000/test1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"topic\" : \"topic1\",\r\n\"data\" : { \"message\" : \"hello\" }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
