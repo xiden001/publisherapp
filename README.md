@@ -24,3 +24,4 @@ Create new topic (if required)
 
 ## NB
 1. Subscriber sample app running at http://localhost:9000/test1 can be obtained [here](https://github.com/xiden001/subscriberapp) 
+2. POSTMAN COLLECTION for testing the API is available in the project folder
