@@ -24,3 +24,6 @@ Route::post('/topics', [TopicsController::class , 'createTopic'])->name("createT
 
 //Create a subscription POST /subscribe/{topic}
 Route::post('/subscribe/{topic}', [SubscriptionsController::class , 'subscribe'])->name("subscribe");
+
+//Publish topic POST /publish/{topic}
+Route::post('/publish/{topic}', [SubscriptionsController::class , 'publish'])->name("publish");
